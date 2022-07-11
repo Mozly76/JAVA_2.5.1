@@ -6,23 +6,23 @@ import org.junit.jupiter.api.Test;
 public class StatsServiceTest {
 
     @Test
-    public void testSumSales() {
+    public void testSum() {
         StatsService service = new StatsService();
-        int expected = 180;
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int actual = service.sumSales(sales);
+        long actual = service.sum(sales);
+        long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void testCalcAAverageMonthlySales() {
+    public void testAAverage() {
         StatsService service = new StatsService();
-        int expected = 15;
+        long expected = 15;
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int actual = service.calcAAverageMonthlySales(sales);
+        long actual = service.average(sales);
 
         Assertions.assertEquals(expected, actual);
     }
